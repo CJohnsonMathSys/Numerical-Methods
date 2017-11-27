@@ -23,8 +23,8 @@ function searchList(L::Nullable{LList}, k::Int64)
     else
         # not found k yet, progress along list
         if isnull(get(L).next)
-            # next element does not exist, return the current element KVPair
-            return get(L).data
+            # next element does not exist, return the NUllable KVPair
+            return Nullable{KVPair}
         end    
         searchList(get(L).next,k)
     end
